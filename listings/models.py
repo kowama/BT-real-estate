@@ -12,9 +12,9 @@ class Listing(models.Model):
     zip_code = models.CharField(max_length=20)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=12, decimal_places=2)
-    bedrooms = models.IntegerField(max_length=2)
+    bedrooms = models.IntegerField()
     bathrooms = models.IntegerField()
-    garage = models.IntegerField(max_length=2, default=0)
+    garage = models.IntegerField(default=0)
     square_feet = models.IntegerField()
     lot_size = models.DecimalField(max_digits=6, decimal_places=2)
     photo_main = models.ImageField(upload_to='photos/listings/%Y/%m/%d/')
@@ -28,4 +28,4 @@ class Listing(models.Model):
     list_day = models.DateField(default=datetime.now)
 
     def __str__(self):
-        return str.title
+        return self.title
