@@ -9,10 +9,6 @@ def about(request):
     return render(request, 'pages/about.html')
 
 
-def listings(request):
-    return render(request, 'pages/about.html')
-
-
 def register(request):
     return render(request, 'pages/about.html')
 
