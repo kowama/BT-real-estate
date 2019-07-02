@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %} | Dashboard {% endblock %}
 {% block content %}
     <main>
 
@@ -26,13 +27,14 @@
                     </ol>
                 </nav>
             </div>
+            {% include 'partials/_alerts.html' %}
         </section>
 
         <section id="dashboard" class="py-4">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Welcome John</h2>
+                        <h2>Welcome {{ user.username }}</h2>
                         <p>Here are the property listings that you have inquired about</p>
                         <table class="table">
                             <thead>
