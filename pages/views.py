@@ -23,11 +23,3 @@ def about(request):
         'seller_of_the_month': seller_of_the_month
     }
     return render(request, 'pages/about.html', context)
-
-
-def register(request):
-    return render(request, 'pages/about.html')
-
-
-def login(request):
-    return render(request, 'pages/about.html')
