@@ -1,14 +1,15 @@
 from django.db import models
 from datetime import datetime
 from realtors.models import Realtor
+from .choices import state_choices_tuple
 
 
 class Listing(models.Model):
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, unique=True)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
-    state = models.CharField(max_length=100)
+    state = models.CharField(max_length=100, choices=state_choices_tuple)
     zip_code = models.CharField(max_length=20)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=12, decimal_places=2)

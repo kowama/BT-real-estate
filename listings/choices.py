@@ -83,3 +83,5 @@ state_choices = {
     'WV': 'West Virginia',
     'WY': 'Wyoming'
 }
+
+state_choices_tuple = tuple(state_choices.items())
